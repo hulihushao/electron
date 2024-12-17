@@ -1,0 +1,47 @@
+{
+  "name": "electron-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "background.js",
+  "scripts": {
+    "builder": "electron-builder",
+    "start": "electron ."
+  },
+  "author": "tjp",
+  "license": "ISC",
+  "build": {
+    "productName": "081舰长台",
+    "appId": "com.cilent.app.081jt",
+    "asar": false,
+    "directories": {
+      "output": "081舰长台"
+    },
+    "files": [
+      "background.js",
+      "dist"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "win": {
+      "icon": "./dist/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "node.js": "0.0.1-security"
+},
+  "devDependencies": {
+    "@types/node": "^12.19.12",
+    "electron": "^10.2.0",
+    "electron-builder": "^22.9.1"
+  }
+}
